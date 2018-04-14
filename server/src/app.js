@@ -8,8 +8,8 @@ app.use(morgan('combined'))
 app.use(bodyParser.json())
 app.use(cors())
 
-app.get('/status', (req, res) => {
-  res.send({message: 'hello world'})
+app.post('/register', (req, res) => {
+  res.send({ message: 'user registered', credentials: req.body })
 })
 
 const port = process.env.PORT || 8081
